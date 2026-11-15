@@ -1,0 +1,20 @@
+{
+  "name": "himjlean",
+  "interface": {
+    "displayName": "himjlean"
+  },
+  "plugins": [
+    {
+      "name": "himjlean",
+      "source": {
+        "source": "local",
+        "path": "./plugins/himjlean"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

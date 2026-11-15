@@ -1,0 +1,25 @@
+{
+  "name": "himjlean",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Projets, tâches et cadrage stratégique himjlean.",
+  "author": {
+    "name": "HIMJ Conception"
+  },
+  "skills": "./skills/",
+  "mcpServers": "./.codex-mcp.json",
+  "interface": {
+    "displayName": "himjlean",
+    "shortDescription": "Projets et tâches himjlean",
+    "developerName": "HIMJ Conception",
+    "category": "Productivity",
+    "capabilities": [
+      "read",
+      "write"
+    ],
+    "defaultPrompt": [
+      "Liste mes tâches en cours sur himjlean.",
+      "Crée une tâche himjlean pour ce que l’on vient de décider."
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "himjlean": {
+      "url": "http://localhost:3000/mcp",
+      "http_headers": {
+        "X-Himjlean-Plugin-Version": "0.1.0"
+      },
+      "oauth": {
+        "client_id": "22f64b46-a803-45d1-8170-04ea0d36ffd0",
+        "callback_port": 3116,
+        "callback_url": "http://127.0.0.1:3116/callback"
+      }
+    }
+  }
+}

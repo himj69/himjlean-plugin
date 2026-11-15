@@ -1,0 +1,11 @@
+{
+  "name": "himjlean",
+  "displayName": "himjlean",
+  "description": "Projets, tâches et cadrage stratégique himjlean.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "HIMJ Conception"
+  },
+  "mcpServers": "./.mcp.json"
+}
