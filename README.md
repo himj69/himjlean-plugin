@@ -1,16 +1,18 @@
-# Plugin himjlean
+# himjlean
 
-> **Bêta.** Les déclarations visent le serveur himjlean de production, `https://www.himjconception.com/mcp`. Il faut un compte himjlean pour autoriser la connexion.
+Connectez votre agent de code à vos projets himjlean pour retrouver vos tâches, les organiser et avancer sur votre cadrage stratégique sans quitter votre conversation.
 
-Le plugin himjlean réunit le skill `himjlean` et la déclaration du serveur MCP himjlean pour Codex, Claude Code et OpenCode. Le serveur est hébergé : ses outils évoluent sans mise à jour du plugin.
+Le plugin installe le serveur MCP himjlean et les consignes qui permettent à l’agent de l’utiliser correctement. Il est disponible pour **Codex** et **Claude Code**. L’intégration **OpenCode** est proposée en bêta.
 
-## Identifiants d'application
+## Avant de commencer
 
-Les trois applications OAuth déclarées ici (une par client) sont des clients publics, sans secret. Un agent installé sur la machine de quelqu'un ne peut rien garder de confidentiel : le même plugin est distribué à tout le monde, donc un secret qui s'y trouverait n'en serait plus un. La protection vient d'ailleurs : la vérification PKCE de la connexion, les adresses de retour limitées au poste local (ports 3116 à 3118), et l'écran de consentement himjlean qui affiche le compte connecté avant d'autoriser.
+- disposer d’un [compte himjlean](https://www.himjconception.com/himjlean) ;
+- avoir installé Codex, Claude Code ou OpenCode ;
+- autoriser l’accès au compte himjlean dans le navigateur pendant l’installation.
 
-## Installer
+## Installer le plugin
 
-Codex :
+### Codex
 
 ```sh
 codex plugin marketplace add himj69/himjlean-plugin
@@ -18,40 +20,50 @@ codex plugin add himjlean@himjlean
 codex mcp login himjlean
 ```
 
-Claude Code :
+Une page himjlean s’ouvre dans le navigateur. Vérifiez le compte affiché, puis autorisez Codex.
+
+### Claude Code
 
 ```sh
 claude plugin marketplace add himj69/himjlean-plugin
 claude plugin install himjlean@himjlean
 ```
 
-Puis, dans une session terminale, `/mcp`, le serveur himjlean, **Authenticate**.
+Dans Claude Code, ouvrez `/mcp`, sélectionnez **himjlean**, puis **Authenticate**. Vérifiez ensuite le compte affiché dans le navigateur et autorisez l’accès.
 
-OpenCode : copier le bloc de [opencode/opencode.json](opencode/opencode.json) dans son `opencode.json`, puis :
+### OpenCode — bêta
+
+1. Fusionnez la configuration de [`opencode/opencode.json`](opencode/opencode.json) avec votre propre fichier `opencode.json`.
+2. Installez le skill et lancez l’autorisation :
 
 ```sh
 npx skills add himj69/himjlean-plugin --skill himjlean
 opencode mcp auth himjlean
 ```
 
+Conservez les autres serveurs déjà présents dans votre configuration OpenCode.
+
+## Vérifier la connexion
+
+Après l’installation, ouvrez une nouvelle conversation et demandez :
+
+> Liste les projets de mon organisation avec himjlean.
+
+L’agent doit utiliser les outils du serveur `himjlean`. S’ils n’apparaissent pas immédiatement, redémarrez votre client puis ouvrez une nouvelle conversation.
+
 ## Mettre à jour
 
-Une seule commande met à jour le skill et la déclaration. Le serveur prévient quand une version est disponible.
+Le serveur vous prévient lorsqu’une nouvelle version du plugin est disponible.
 
-| Client | Commande | Ensuite |
+| Client | Commande de mise à jour | Ensuite |
 | --- | --- | --- |
 | Codex | `codex plugin marketplace upgrade himjlean && codex plugin add himjlean@himjlean` | Ouvrir une nouvelle conversation |
 | Claude Code | `claude plugin marketplace update himjlean && claude plugin update himjlean@himjlean` | Redémarrer Claude Code |
-| OpenCode | `npx skills update himjlean` | Passer l’en-tête `X-Himjlean-Plugin-Version` à la nouvelle version, puis redémarrer |
+| OpenCode | `npx skills update himjlean` | Mettre à jour la version indiquée dans `opencode.json`, puis redémarrer |
 
-## Publier une version
+## Liens utiles
 
-1. Modifier le skill ou les déclarations.
-2. Avancer la version dans les six fichiers qui la portent : les deux `plugin.json`, la marketplace Claude, l’en-tête des deux déclarations et l’exemple OpenCode.
-3. Ajouter l’entrée dans [CHANGELOG.md](CHANGELOG.md), puis dans le journal du serveur (`src/lib/himjlean/mcp-versions.ts` du site), et y avancer `recommended`.
-
-Version à trois chiffres : correction invisible, ajout, rupture annoncée. Une rupture garde l’ancienne version acceptée 90 jours.
-
-## Tester en local
-
-Les déclarations du serveur local de développement sont dans [examples/dev/](examples/dev/). La marketplace ne les installe pas : on les recopie à la main dans sa propre configuration.
+- [Découvrir himjlean](https://www.himjconception.com/himjlean)
+- [Guide d’installation détaillé](https://www.himjconception.com/himjlean#installation)
+- [Consulter les changements](CHANGELOG.md)
+- [Licence MIT](LICENSE)
