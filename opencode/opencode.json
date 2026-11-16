@@ -4,12 +4,12 @@
     "servers": {
       "himjlean": {
         "type": "remote",
-        "url": "http://localhost:3000/mcp",
+        "url": "https://www.himjconception.com/mcp",
         "headers": {
-          "X-Himjlean-Plugin-Version": "0.1.0"
+          "X-Himjlean-Plugin-Version": "0.2.0"
         },
         "oauth": {
-          "client_id": "488ee3e3-e055-44b7-bed5-cc876cff37cb",
+          "client_id": "33418133-8264-49f5-b955-ffe5cf95171b",
           "callback_port": 3118,
           "redirect_uri": "http://127.0.0.1:3118/callback"
         }

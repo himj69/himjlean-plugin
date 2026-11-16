@@ -2,12 +2,12 @@
   "mcpServers": {
     "himjlean": {
       "type": "http",
-      "url": "http://localhost:3000/mcp",
+      "url": "https://www.himjconception.com/mcp",
       "headers": {
-        "X-Himjlean-Plugin-Version": "0.1.0"
+        "X-Himjlean-Plugin-Version": "0.2.0"
       },
       "oauth": {
-        "clientId": "b3aa8b7a-57fd-4de3-8f45-e0b6a168e364",
+        "clientId": "f7ce08eb-3be9-4a12-a7c2-32b43c00c834",
         "callbackPort": 3117
       }
     }
