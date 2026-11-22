@@ -4,6 +4,8 @@ Connectez votre agent de code à vos projets himjlean pour retrouver vos tâches
 
 Le plugin installe le serveur MCP himjlean et les consignes qui permettent à l’agent de l’utiliser correctement. Il est disponible pour **Codex** et **Claude Code**. L’intégration **OpenCode** est proposée en bêta.
 
+La version 0.3.0 ajoute les consignes pour les organisations partagées, les rôles Propriétaire, Admin et Reader, les invitations et les notifications. Le [guide complet](https://www.himjconception.com/himjlean#documentation) présente les outils et les droits de chaque rôle.
+
 ## Avant de commencer
 
 - disposer d’un [compte himjlean](https://www.himjconception.com/himjlean) ;
@@ -64,6 +66,6 @@ Le serveur vous prévient lorsqu’une nouvelle version du plugin est disponible
 ## Liens utiles
 
 - [Découvrir himjlean](https://www.himjconception.com/himjlean)
-- [Guide d’installation détaillé](https://www.himjconception.com/himjlean#installation)
+- [Documentation et installation](https://www.himjconception.com/himjlean#documentation)
 - [Consulter les changements](CHANGELOG.md)
 - [Licence MIT](LICENSE)

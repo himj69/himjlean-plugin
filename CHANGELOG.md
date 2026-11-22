@@ -1,5 +1,10 @@
 # Journal du plugin himjlean
 
+## 0.3.0 — 21 novembre 2026
+
+- Skill `himjlean` 0.3.0 pour les organisations partagées : rôle Propriétaire, Admin ou Reader respecté, refus `forbidden_role` expliqué sans relance, équipe lue avant toute attribution, accord explicite avant une invitation, un changement de rôle ou un retrait, notifications résumées sans être marquées comme lues.
+- Déclarations du serveur inchangées, en dehors de l’en-tête `X-Himjlean-Plugin-Version`.
+
 ## 0.2.0 — 16 novembre 2026
 
 - Déclarations du serveur pour la production : `https://www.himjconception.com/mcp`, avec les applications OAuth de production de Codex, Claude Code et OpenCode. Les ports de retour ne changent pas.
