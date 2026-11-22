@@ -3,7 +3,7 @@
     "himjlean": {
       "url": "https://www.himjconception.com/mcp",
       "http_headers": {
-        "X-Himjlean-Plugin-Version": "0.2.0"
+        "X-Himjlean-Plugin-Version": "0.3.0"
       },
       "oauth": {
         "client_id": "8e61d1a5-7f08-4e7e-93ee-bc8e82f127b3",

@@ -4,7 +4,7 @@
       "type": "http",
       "url": "https://www.himjconception.com/mcp",
       "headers": {
-        "X-Himjlean-Plugin-Version": "0.2.0"
+        "X-Himjlean-Plugin-Version": "0.3.0"
       },
       "oauth": {
         "clientId": "f7ce08eb-3be9-4a12-a7c2-32b43c00c834",

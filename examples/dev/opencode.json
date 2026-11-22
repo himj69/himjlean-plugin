@@ -6,7 +6,7 @@
         "type": "remote",
         "url": "http://localhost:3000/mcp",
         "headers": {
-          "X-Himjlean-Plugin-Version": "0.2.0"
+          "X-Himjlean-Plugin-Version": "0.3.0"
         },
         "oauth": {
           "client_id": "488ee3e3-e055-44b7-bed5-cc876cff37cb",

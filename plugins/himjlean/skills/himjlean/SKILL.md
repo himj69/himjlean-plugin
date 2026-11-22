@@ -1,17 +1,39 @@
 ---
 name: himjlean
-description: Utiliser le serveur MCP himjlean pour lire et gérer les projets, les tâches et le cadrage stratégique d’une personne sur himjlean (HIMJ Conception). À utiliser dès qu’elle parle de ses tâches, de son projet himjlean, d’en créer ou d’en modifier une, ou de son cadrage stratégique.
+description: Utiliser le serveur MCP himjlean pour lire et gérer les projets, les tâches, le cadrage stratégique, l’équipe et les notifications d’une personne sur himjlean (HIMJ Conception). À utiliser dès qu’elle parle de ses tâches, de son projet himjlean, d’en créer, d’en attribuer ou d’en modifier une, de son cadrage stratégique, de son équipe ou de ses notifications.
 ---
 
 # himjlean
 
-himjlean range les projets d’une personne, leurs tâches et leur cadrage stratégique. Le serveur MCP `himjlean` donne accès à ces données. Ce skill dit comment préparer chaque appel. Les règles de fond (droits, verrouillage, versions) sont appliquées par le serveur.
+himjlean range les projets d’une personne, leurs tâches et leur cadrage stratégique, seule ou en équipe. Le serveur MCP `himjlean` donne accès à ces données. Ce skill dit comment préparer chaque appel. Les règles de fond (droits, rôles, verrouillage, versions) sont appliquées par le serveur.
 
 ## Toujours passer par himjlean
 
 - Pour tout ce qui concerne himjlean, appeler uniquement les outils du serveur `himjlean` (leur nom commence par `himjlean_`).
 - Ne jamais se rabattre sur un outil au nom proche d’un autre serveur, par exemple `get_project` de Linear. Si les outils himjlean sont absents de la session, le dire à la personne et lui proposer de vérifier la connexion MCP, puis d’ouvrir une nouvelle conversation.
 - Quand le projet n’est pas clair, le demander ou le choisir avec `himjlean_select_project`. Quand une réponse contient `in_project`, nommer ce projet à la personne.
+
+## Respecter le rôle de la personne
+
+Chaque organisation donne un rôle, renvoyé par `himjlean_list_organisations`, `himjlean_select_project` et les listes de tâches (`role` ou `my_role`).
+
+- **owner** (Propriétaire) : tout, y compris inviter, changer un rôle, retirer un membre et appliquer les suggestions de cadrage.
+- **admin** : créer, modifier, valider et supprimer les tâches. Ses réponses de cadrage deviennent des suggestions que le Propriétaire applique ou refuse. Le dire à la personne.
+- **reader** : tout lire. Faire avancer seulement ses tâches attribuées (En attente, En cours, Validée en dev, temps passé, résultat, date de passage en dev), sans retour après dev.
+
+Proposer seulement les actions que le rôle permet. Un refus `forbidden_role` s’explique à la personne en une phrase, sans réessayer ni contourner.
+
+## Équipe et attribution
+
+- Avant d’attribuer une tâche (`realised_by`) ou de filtrer par personne, lire l’équipe avec `himjlean_get_team` et désigner le membre par son adresse e-mail. Quand la personne donne un prénom, le rapprocher d’une adresse de l’équipe et confirmer en cas de doute.
+- Inviter, renvoyer ou révoquer une invitation, changer un rôle ou retirer un membre demande toujours l’accord explicite de la personne, même si elle l’a évoqué. Nommer la personne visée et l’organisation avant d’agir.
+- L’e-mail d’invitation part du serveur. Le lien n’est jamais donné à l’agent. Si l’envoi échoue, renvoyer la personne vers l’adresse `settings_url` fournie.
+- Quitter, supprimer une organisation ou un projet se fait seulement sur le web.
+
+## Notifications
+
+- `himjlean_list_notifications` ne marque rien comme lu. Commencer la réponse par son `summary` (non lues en tout, puis dans le projet mémorisé), puis résumer les notifications utiles.
+- Marquer comme lu avec `himjlean_mark_notifications_read` seulement quand la personne le demande.
 
 ## Demander l’accord avant d’écrire
 

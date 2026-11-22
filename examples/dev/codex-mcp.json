@@ -3,7 +3,7 @@
     "himjlean": {
       "url": "http://localhost:3000/mcp",
       "http_headers": {
-        "X-Himjlean-Plugin-Version": "0.2.0"
+        "X-Himjlean-Plugin-Version": "0.3.0"
       },
       "oauth": {
         "client_id": "22f64b46-a803-45d1-8170-04ea0d36ffd0",

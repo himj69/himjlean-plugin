@@ -6,7 +6,7 @@
         "type": "remote",
         "url": "https://www.himjconception.com/mcp",
         "headers": {
-          "X-Himjlean-Plugin-Version": "0.2.0"
+          "X-Himjlean-Plugin-Version": "0.3.0"
         },
         "oauth": {
           "client_id": "33418133-8264-49f5-b955-ffe5cf95171b",
